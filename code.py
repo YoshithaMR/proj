@@ -31,7 +31,7 @@ def add(filename):
     with open(filename, 'rb') as f:
         content = f.read()
     sha1 = hash_content(content)
-    path = os.path.join(OBJECTS_DIR, sha1)
+    path = os.path.join(OBJ_DIR, sha1)
     if not os.path.exists(path):
         with open(path, 'wb') as f:
             f.write(content)
@@ -112,40 +112,4 @@ def help():
     print("  log                Show commit history")
     print("  checkout <num>     Restore files from commit number")
     print("  status             Show staged files")
-    print("  help               Show this help")
-
-def main():
-    if len(sys.argv) < 2:
-        help()
-        return
-    cmd = sys.argv[1]
-    if cmd == "init":
-        init()
-    elif cmd == "add":
-        if len(sys.argv) < 3:
-            print("Specify file to add.")
-        else:
-            add(sys.argv[2])
-    elif cmd == "commit":
-        if len(sys.argv) < 3:
-            print("Specify commit message.")
-        else:
-            commit(" ".join(sys.argv[2:]))
-    elif cmd == "log":
-        log()
-    elif cmd == "checkout":
-        if len(sys.argv) < 3:
-            print("Specify commit number.")
-        else:
-            try:
-                checkout(int(sys.argv[2]))
-            except ValueError:
-                print("Invalid commit number.")
-    elif cmd == "status":
-        status()
-    else:
-        help()
-
-if __name__ == "__main__":
-    main()
-
+    print("  help               Show this help

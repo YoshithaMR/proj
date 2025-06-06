@@ -135,7 +135,5 @@ def main():
          else:
             try:
                 checkout(int(sys.argv[2]))
-            except ValueError:
-                print("Invalid commit number.")
-
+            
 

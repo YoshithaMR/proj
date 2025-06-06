@@ -141,11 +141,3 @@ def main():
                 checkout(int(sys.argv[2]))
             except ValueError:
                 print("Invalid commit number.")
-    elif cmd == "status":
-        status()
-    else:
-        help()
-
-if __name__ == "__main__":
-    main()
-

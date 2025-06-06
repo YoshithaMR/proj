@@ -10,9 +10,6 @@ OBJECTS_DIR = os.path.join(VCS_DIR, "objects")
 COMMITS_FILE = os.path.join(VCS_DIR, "commits.json")
 INDEX_FILE = os.path.join(VCS_DIR, "index.json")
 
-def hash_content(content):
-    return hashlib.sha1(content).hexdigest()
-
 def init():
     if os.path.exists(VCS_DIR):
         print("Repository already initialized.")

@@ -132,12 +132,7 @@ def main():
             print("Specify commit message.")
         else:
             commit(" ".join(sys.argv[2:]))
-    elif cmd == "log":
-        log()
-    elif cmd == "checkout":
-        if len(sys.argv) < 3:
-            print("Specify commit number.")
-        else:
+         else:
             try:
                 checkout(int(sys.argv[2]))
             except ValueError:

@@ -111,8 +111,10 @@ def help():
     print("  commit <msg>       Commit staged files")
     print("  log                Show commit history")
     print("  checkout <num>     Restore files from commit number")
-    print("  status             Show staged files
+    print("  status             Show staged files")
+<<<<<<< HEAD
     print("  help               Show this help
+=======
     print("  help               Show this help")
 
 def main():
@@ -142,4 +144,4 @@ def main():
                 checkout(int(sys.argv[2]))
             except ValueError:
                 print("Invalid commit number.")
-
+>>>>>>> b2
